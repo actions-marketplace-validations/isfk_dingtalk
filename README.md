@@ -14,7 +14,7 @@ jobs:
     runs-on: node-latest
     steps:
       - name: dingtalk
-        uses: https://github.com/isfk/dingtalk@v1.2
+        uses: https://github.com/isfk/dingtalk@v2.4
         with:
           accessToken: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
           secret: ${{ secrets.DINGTALK_SECRET }}
@@ -40,7 +40,7 @@ jobs:
     runs-on: node-latest
     steps:
       - name: dingtalk
-        uses: https://github.com/isfk/dingtalk@v1.2
+        uses: https://github.com/isfk/dingtalk@v2.4
         with:
           accessToken: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
           secret: ${{ secrets.DINGTALK_SECRET }}
@@ -65,13 +65,16 @@ jobs:
     runs-on: node-latest
     steps:
       - name: dingtalk
-        uses: https://github.com/isfk/dingtalk@v1.2
+        uses: https://github.com/isfk/dingtalk@v2.4
         with:
           accessToken: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
           secret: ${{ secrets.DINGTALK_SECRET }}
           msgType: "markdown"
           title: "this is title"
           text: "## this is content \n ### content.... ${{ github.sha }}"
+          atMobiles: 13800138001,13800138000
+          atUserIds: 13800138001,13800138000
+          isAtAll: false
       - name: Result
         run: echo "🍏 This job's status is ${{ job.status }}."
 ```
@@ -91,7 +94,7 @@ jobs:
     runs-on: node-latest
     steps:
       - name: dingtalk
-        uses: https://github.com/isfk/dingtalk@v1.2
+        uses: https://github.com/isfk/dingtalk@v2.4
         with:
           accessToken: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
           secret: ${{ secrets.DINGTALK_SECRET }}
@@ -101,6 +104,9 @@ jobs:
           singleTitle: singleTitle
           singleURL: https://github.com
           # btns: '[{ "title": "isfk", "actionURL": "https://isfk.cn" }, { "title": "github", "actionURL": "https://github.com" }]'
+          atMobiles: 13800138001,13800138000
+          atUserIds: 13800138001,13800138000
+          isAtAll: false
       - name: Result
         run: echo "🍏 This job's status is ${{ job.status }}."
 ```
@@ -119,7 +125,7 @@ jobs:
     runs-on: node-latest
     steps:
       - name: dingtalk
-        uses: https://github.com/isfk/dingtalk@v1.2
+        uses: https://github.com/isfk/dingtalk@v2.4
         with:
           accessToken: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
           secret: ${{ secrets.DINGTALK_SECRET }}

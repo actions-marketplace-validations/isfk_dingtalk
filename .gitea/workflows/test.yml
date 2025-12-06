@@ -7,15 +7,13 @@ jobs:
     runs-on: node-latest
     steps:
       - name: dingtalk
-        uses: https://git.isfk.cn/actions/dingtalk@v1.2
+        uses: https://git.isfk.cn/actions/dingtalk@v2.2
         with:
           accessToken: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
           secret: ${{ secrets.DINGTALK_SECRET }}
           msgType: text
           title: 这个即将发布的新版本，创始人xx称它为红树林。而在此之前，每当面临重大升级，产品经理们都会取一个应景的代号，这一次，为什么是红树林
           content: 时代的火车向前开
-          atMobiles: 17610769360,13800138000
-          atUserIds: 17610769360,13800138000
           isAtAll: false
       - name: Result
         run: echo "🍏 This job's status is ${{ job.status }}."
